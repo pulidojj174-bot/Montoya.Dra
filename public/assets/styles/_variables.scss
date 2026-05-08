@@ -1,0 +1,165 @@
+@use "sass:map";
+
+$colors: (
+  // ==========================
+  // BRANDING PRINCIPAL
+  // ==========================
+  primary: #0F2A1D,
+  // Verde billar profundo (fondo base)
+
+  secondary: #8B5A2B,
+  // Madera / lujo / detalles premium
+
+  accent: #C8A96A,
+  // Dorado elegante (hover, highlights)
+
+  background: #0A0F0D,
+  // Fondo general dark
+
+  surface: #121A16,
+  // Cards, contenedores
+
+  // ==========================
+  // ESCALA VERDE BILLAR
+  // ==========================
+  green-50: #E8F3EC,
+  green-100: #CDE3D5,
+  green-200: #A3CBB6,
+  green-300: #79B397,
+  green-400: #4F9B78,
+  green-500: #2F7A5A,
+  green-600: #256247,
+  green-700: #1B4A35,
+  green-800: #113223,
+  green-900: #0F2A1D, // Primary
+  green-950: #07150E,
+
+  // ==========================
+  // COLORES PREMIUM (EXTRAS)
+  // ==========================
+  gold-light: #E6C78B,
+  gold-main: #C8A96A,
+  gold-dark: #8B6A3E,
+
+  wood-light: #A47148,
+  wood-main: #8B5A2B,
+  wood-dark: #5C3A1A,
+
+  // ==========================
+  // TEXTO
+  // ==========================
+  text-light: #F5F7F6,
+  text-light-muted: #C7D2CE,
+
+  text-dark: #0B0E0B,
+  text-darker: #050707,
+
+  text-muted: #7A8C85,
+
+  // ==========================
+  // NEUTROS (DARK UI)
+  // ==========================
+  black1: #000000,
+  black2: #050707,
+  black3: #0A0F0D,
+
+  gray0: #1F2A25,
+  gray1: #2A3631,
+  gray2: #34423C,
+  gray3: #41514A,
+  gray4: #5A6B63,
+  gray5: #6F8078,
+  gray6: #889892,
+  gray7: #A3B3AC,
+  gray8: #C7D2CE,
+
+  white1: #FFFFFF,
+  white2: #F9FAFB,
+  white3: #F3F4F6,
+
+  // ==========================
+  // BACKGROUNDS
+  // ==========================
+  bg-main: #0A0F0D,
+  bg-alt: #121A16,
+  bg-glass: rgba(255, 255, 255, 0.03),
+
+  // ==========================
+  // ACCIONES Y ESTADOS
+  // ==========================
+  success: #22C55E,
+  error: #EF4444,
+  warning: #F59E0B,
+  info: #3B82F6,
+
+  // ==========================
+  // INTERACTIVOS
+  // ==========================
+  hover-primary: #1B4A35,
+  hover-secondary: #A47148,
+  border-subtle: #1F2A25,
+
+  custom-cursor-gold: #C8A96A
+);
+
+@function color($color-name) {
+  @return map.get($colors, $color-name);
+}
+
+// Breakpoints - Mobile First
+$mobile-small: 320px;
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1024px;
+$desktop-large: 1440px;
+$desktop-xl: 1920px;
+
+// Typography
+$font-size-title: 5.125rem;    // 82px
+$font-size-subtitle:2rem;    // 32px
+$font-size-text: 1.25rem;      // 20px
+$font-size-sm: 0.875rem;       // 14px
+$font-size-ultra-sm: 0.75rem;  // 12px
+
+// Responsive typography
+$font-size-title-mobile: 2.5rem;   // 40px
+$font-size-text-mobile: 1rem;      // 16px
+
+// Layout
+$padding-box: 0 24px;
+$margin-box: 0px;
+$container-max-width: 1200px;
+
+// UI Elements
+$borderRadius: 12px;
+$borderRadius-sm: 6px;
+$borderRadius-lg: 16px;
+
+// Transitions
+$transitionDuration: 0.2s;
+$transitionEasing: ease-in-out;
+
+// Spacing scale (múltiplos de 8px)
+$spacing-xxs: 2px;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Z-index scale
+$z-dropdown: 1000;
+$z-modal: 1050;
+$z-tooltip: 1070;
+
+// PrimeNG compatibility (si los necesitas)
+/* $prime-mixins1: 992px;
+$prime-mixins2: 991px; */
+$scale: 14px;
+
+
+
+// Typography
+$font-family-primary: 'Poiret One', cursive;
+$font-family-secondary: system-ui, -apple-system, sans-serif;

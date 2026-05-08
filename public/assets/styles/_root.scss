@@ -1,0 +1,77 @@
+@use "variables.scss" as variables;
+@use "mixins.scss" as mixins;
+
+// ======================
+// Base / Reset
+// ======================
+
+:root {
+  font-family: variables.$font-family-primary;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: variables.$font-family-primary;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: variables.color(bg-main);
+  color: variables.color(text-light-muted);
+
+  // Define el valor de la sombra para el foco
+  --focus-ring: 0 0 0 0.2rem #{variables.color(green-300)};
+}
+
+// ======================
+// Blocks
+// ======================
+
+// Block: wrapper
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+
+  @include mixins.desktop {
+    padding-top: 80px;
+  }
+}
+
+// Block: container
+.container {
+  &--fluid {
+    padding: 0 24px;
+
+    @include mixins.desktop {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &--payment {
+    .p-inputnumber {
+      width: 100%;
+    }
+  }
+}
+
+// Block: text
+.text {
+  &--secondary {
+    color: variables.color(text-light-muted);
+  }
+}
+
+// ======================
+// Utilities
+// ======================
+
+.font-secondary {
+  font-family: variables.$font-family-secondary;
+}
