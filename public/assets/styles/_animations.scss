@@ -1,0 +1,172 @@
+@use 'variables' as v;
+
+// ======================
+// SCROLL REVEAL ANIMATIONS
+// ======================
+
+// Base state: hidden before scroll trigger
+[data-reveal] {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.7s v.$transitionEasing,
+    transform 0.7s v.$transitionEasing;
+}
+
+// Revealed state
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+// Respects reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// ======================
+// REVEAL DIRECTIONS
+// ======================
+
+// Fade up (default)
+[data-reveal="fade-up"] {
+  transform: translateY(40px);
+}
+
+// Fade down
+[data-reveal="fade-down"] {
+  transform: translateY(-40px);
+}
+
+// Fade left
+[data-reveal="fade-left"] {
+  transform: translateX(40px);
+}
+
+// Fade right
+[data-reveal="fade-right"] {
+  transform: translateX(-40px);
+}
+
+// Scale up
+[data-reveal="zoom-in"] {
+  transform: scale(0.92);
+}
+
+// Fade only (no movement)
+[data-reveal="fade"] {
+  transform: none;
+}
+
+// ======================
+// STAGGER DELAYS (for card grids)
+// ======================
+
+@for $i from 1 through 8 {
+  [data-reveal-delay="#{$i}"] {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
+
+// ======================
+// REUSABLE KEYFRAME ANIMATIONS
+// ======================
+
+// Slow zoom for images (Ken Burns effect)
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+// Gentle floating motion
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+// Shimmer / text gradient sweep
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+// Pulse glow (buttons / CTAs)
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(100, 157, 71, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(100, 157, 71, 0);
+  }
+}
+
+// Decorative line grow from center
+@keyframes lineGrow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+// Icon bounce
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+// Subtle border glow
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: v.color(border);
+  }
+  50% {
+    border-color: v.color(accent-blue);
+  }
+}
+
+// Quotation mark float
+@keyframes quoteFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-6px) rotate(-2deg);
+    opacity: 0.7;
+  }
+}
+
+// Reduced motion: disable all custom keyframes
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

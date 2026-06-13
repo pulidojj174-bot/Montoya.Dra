@@ -22,7 +22,7 @@ body {
   color: variables.color(text-light-muted);
 
   // Define el valor de la sombra para el foco
-  --focus-ring: 0 0 0 0.2rem #{variables.color(green-300)};
+  --focus-ring: 0 0 0 0.2rem #{variables.color(blue-300)};
 }
 
 // ======================
@@ -36,21 +36,45 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 0 24px;
+  padding: variables.$spacing-md;      // Mobile: 16px
 
-  @include mixins.desktop {
+  @include mixins.tablet-up {
+    padding: variables.$spacing-lg;    // Tablet: 24px
+  }
+
+  @include mixins.desktop-up {
+    padding: variables.$spacing-xl;    // Desktop: 32px
     padding-top: 80px;
   }
 }
 
 // Block: container
 .container {
-  &--fluid {
-    padding: 0 24px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
 
-    @include mixins.desktop {
-      margin: 0 auto;
+  &--fluid {
+    padding: variables.$spacing-md;    // Mobile: 16px
+
+    @include mixins.tablet-up {
+      padding: variables.$spacing-lg;
+    }
+
+    @include mixins.desktop-up {
+      max-width: variables.$container-max-width;
       padding: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &--constrained {
+    max-width: variables.$container-max-width;
+    margin: 0 auto;
+    padding: variables.$spacing-md;
+
+    @include mixins.tablet-up {
+      padding: variables.$spacing-lg;
     }
   }
 

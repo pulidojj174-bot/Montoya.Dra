@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@use '../public/assets/styles/root';
+@use '../public/assets/styles/mixins';
+@use '../public/assets/styles/variables';
+@use '../public/assets/styles/animations';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

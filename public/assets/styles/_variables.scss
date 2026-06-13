@@ -1,105 +1,94 @@
 @use "sass:map";
 
 $colors: (
-  // ==========================
-  // BRANDING PRINCIPAL
-  // ==========================
-  primary: #0F2A1D,
-  // Verde billar profundo (fondo base)
+  // =================================
+  // BRAND COLORS
+  // =================================
+  primary: #0057B8,
+  secondary: #007DFF,
+  accent: #34C3FF,
 
-  secondary: #8B5A2B,
-  // Madera / lujo / detalles premium
-
-  accent: #C8A96A,
-  // Dorado elegante (hover, highlights)
-
-  background: #0A0F0D,
-  // Fondo general dark
-
-  surface: #121A16,
-  // Cards, contenedores
-
-  // ==========================
-  // ESCALA VERDE BILLAR
-  // ==========================
-  green-50: #E8F3EC,
-  green-100: #CDE3D5,
-  green-200: #A3CBB6,
-  green-300: #79B397,
-  green-400: #4F9B78,
-  green-500: #2F7A5A,
-  green-600: #256247,
-  green-700: #1B4A35,
-  green-800: #113223,
-  green-900: #0F2A1D, // Primary
-  green-950: #07150E,
-
-  // ==========================
-  // COLORES PREMIUM (EXTRAS)
-  // ==========================
-  gold-light: #E6C78B,
-  gold-main: #C8A96A,
-  gold-dark: #8B6A3E,
-
-  wood-light: #A47148,
-  wood-main: #8B5A2B,
-  wood-dark: #5C3A1A,
-
-  // ==========================
-  // TEXTO
-  // ==========================
-  text-light: #F5F7F6,
-  text-light-muted: #C7D2CE,
-
-  text-dark: #0B0E0B,
-  text-darker: #050707,
-
-  text-muted: #7A8C85,
-
-  // ==========================
-  // NEUTROS (DARK UI)
-  // ==========================
-  black1: #000000,
-  black2: #050707,
-  black3: #0A0F0D,
-
-  gray0: #1F2A25,
-  gray1: #2A3631,
-  gray2: #34423C,
-  gray3: #41514A,
-  gray4: #5A6B63,
-  gray5: #6F8078,
-  gray6: #889892,
-  gray7: #A3B3AC,
-  gray8: #C7D2CE,
-
-  white1: #FFFFFF,
-  white2: #F9FAFB,
-  white3: #F3F4F6,
-
-  // ==========================
+  // =================================
   // BACKGROUNDS
-  // ==========================
-  bg-main: #0A0F0D,
-  bg-alt: #121A16,
-  bg-glass: rgba(255, 255, 255, 0.03),
+  // =================================
+  background: #F7FAFD,
+  surface: #FFFFFF,
 
-  // ==========================
-  // ACCIONES Y ESTADOS
-  // ==========================
+  bg-main: #F7FAFD,
+  bg-alt: #EEF6FF,
+  bg-glass: rgba(255,255,255,.7),
+
+  // =================================
+  // BLUE SCALE
+  // =================================
+  blue-50: #F2F8FF,
+  blue-100: #DCEEFF,
+  blue-200: #B8DCFF,
+  blue-300: #84C2FF,
+  blue-400: #4CA5FF,
+  blue-500: #007DFF,
+  blue-600: #0068D8,
+  blue-700: #0057B8,
+  blue-800: #003E84,
+  blue-900: #002A59,
+  blue-950: #00172F,
+
+  // =================================
+  // CYAN ACCENTS
+  // =================================
+  cyan-light: #D9F7FF,
+  cyan-main: #34C3FF,
+  cyan-dark: #0EA5E9,
+
+  // =================================
+  // TEXT
+  // =================================
+  text-dark: #0F172A,
+  text-darker: #020617,
+
+  text-light: #FFFFFF,
+  text-light-muted: #E2E8F0,
+
+  text-muted: #64748B,
+
+  // =================================
+  // NEUTRALS
+  // =================================
+  white1: #FFFFFF,
+  white2: #F8FAFC,
+  white3: #F1F5F9,
+
+  gray0: #F8FAFC,
+  gray1: #E2E8F0,
+  gray2: #CBD5E1,
+  gray3: #94A3B8,
+  gray4: #64748B,
+  gray5: #475569,
+  gray6: #334155,
+  gray7: #1E293B,
+  gray8: #0F172A,
+
+  black1: #020617,
+  black2: #0F172A,
+  black3: #1E293B,
+
+  // =================================
+  // STATES
+  // =================================
   success: #22C55E,
   error: #EF4444,
   warning: #F59E0B,
-  info: #3B82F6,
+  info: #0EA5E9,
 
-  // ==========================
-  // INTERACTIVOS
-  // ==========================
-  hover-primary: #1B4A35,
-  hover-secondary: #A47148,
-  border-subtle: #1F2A25,
+  // =================================
+  // INTERACTIVE
+  // =================================
+  hover-primary: #003E84,
+  hover-secondary: #0068D8,
 
-  custom-cursor-gold: #C8A96A
+  border-subtle: #DCEEFF,
+
+  custom-cursor-blue: #007DFF
 );
 
 @function color($color-name) {
@@ -161,5 +150,5 @@ $scale: 14px;
 
 
 // Typography
-$font-family-primary: 'Poiret One', cursive;
-$font-family-secondary: system-ui, -apple-system, sans-serif;
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'Inter', sans-serif;

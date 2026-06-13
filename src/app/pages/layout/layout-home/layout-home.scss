@@ -1,0 +1,32 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: v.$z-tooltip;
+  padding: v.$spacing-sm v.$spacing-md;
+  background: v.color(primary);
+  color: v.color(text-light);
+
+  &:focus {
+    top: 0;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: v.$z-dropdown;
+  }
+
+  &__main {
+    flex: 1;
+  }
+}

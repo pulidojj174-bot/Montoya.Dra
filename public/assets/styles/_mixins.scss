@@ -178,7 +178,7 @@
     outline: 0 none;
     outline-offset: 0;
     transition: box-shadow variables.$transitionDuration;
-    box-shadow: var(--focus-ring, 0 0 0 0.2rem rgba(114, 143, 112, 0.5));
+    box-shadow: var(--focus-ring, 0 0 0 0.2rem #{variables.color(blue-300)});
   }
 }
 
@@ -187,7 +187,7 @@
     outline: 0 none;
     outline-offset: 0;
     transition: box-shadow variables.$transitionDuration;
-    box-shadow: inset var(--focus-ring, 0 0 0 0.2rem rgba(114, 143, 112, 0.5));
+    box-shadow: inset var(--focus-ring, 0 0 0 0.2rem #{variables.color(blue-300)});
   }
 }
 
